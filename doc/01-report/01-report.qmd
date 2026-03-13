@@ -1,0 +1,74 @@
+#==============================================================================
+# Disciplina: Introdução à Ciência de Dados
+#==============================================================================
+# Arquivo:01_introducao.R
+# Autor: Guilherme F. Oliveira
+# Data: 2026-03-12
+# Ojetivo: Usar RStudio, script R e alguns fundamento de R
+
+#Atalho para criar seções de código: Ctrl + Shift + R
+
+
+
+
+# Configurações globais ---------------------------------------------------
+
+# define opções globais para exibição de número
+options(digits = 5, scipen = 999)
+
+# carrega os pacotes necessários
+# LEMBRE-SE 
+library(here)       # para usar caminhos relativos
+library(tidyverse)  # metapacote: dplyr, readr, tidyr, ggplot2
+library(skimr0)     # para compreender os dados skim() e clean_names()
+library(janitor)    # para limpar dados - nomes de colunas
+
+
+
+# R como uma grande calculadora -------------------------------------------
+
+# Operações aritmeticas básicas
+
+# adição
+15 + 7
+
+#subtração
+20 - 6
+
+# multiplicação
+8 * 9
+
+# divisão
+84 / 7
+
+# potencialização
+2 ^ 5
+
+# precedência de operações matemáticas
+# parenteses -> potencialização -> multiplicação e divisão -> adição e subração
+
+(15 + 7) * 2
+84 / (7+5)
+
+
+# Exemplos de funções matemáticas -----------------------------------------
+
+# log natural
+log(1000)
+
+# funções exponêncial: e ^ x
+exp(1)
+
+# valor absoluto (módulo)
+abs(-5)
+
+# raiz quadrada
+sqrt (225)
+
+# arredondamento para 2 casas decimais
+round(3.14159, 2)
+
+```{r}
+
+```
+
