@@ -243,13 +243,14 @@ glimpse(dados_vendas_limpos)
 
 
 ## Resumo estatístico do objeto
+summary(dados_vendas)
 summary(dados_vendas_limpos)
-select(data, cidade, representante)
+
 
 # Salva os dados limpos -------------------------------------------------------
 
 # Define o caminho relativo da pasta onde o arquivo limpo será salvo
-caminho_csv_limpo <- here("data/clean/dados_vendas.rds")
+caminho_csv_limpo <- here("data/clean/dados_vendas_limpos.rds")
 
 # Salva o objeto dados_vendas_limpos no formado rds
 readr::write_rds(dados_vendas_limpos, caminho_csv_limpo)
@@ -400,4 +401,3 @@ dados_vendas_limpos |>
 resultado <- dados_vendas_limpos |>
   select(cidade, produto)
 resultado
-str(dados_vendas_limpos)
