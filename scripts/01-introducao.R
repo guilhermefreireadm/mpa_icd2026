@@ -257,14 +257,13 @@ readr::write_rds(dados_vendas_limpos, caminho_csv_limpo)
 
 # Que perguntas de negócio você faria para esse conjunto de dados?
 
-
 # Manipulação / análise com pacote dplyr
 
 # Exemplo 01
 # Pergunta de negócio: quero apenas as vendas realizadas em formiga
 
 dados_vendas_limpos |>
-filter(cidade == "Formiga")
+  filter(cidade == "Formiga")
 
 
 # Exemplo 02
@@ -272,7 +271,7 @@ filter(cidade == "Formiga")
 # geraram receia maior que 1000
 
 dados_vendas_limpos |>
-filter(cidade == "Formiga" & receita > 1000)
+  filter(cidade == "Formiga" & receita > 1000)
 
 
 # Exemplo 03
@@ -283,7 +282,7 @@ dados_vendas_limpos |>
   
 # Exemplo 04 
 # Pergunta de negócio: quero saber a receita total por cidade
-  receita_por_cidade <- dados_vendas_limpos |>
+receita_por_cidade <- dados_vendas_limpos |>
   group_by(cidade)|>
   summarise(receita_total = sum(receita))
 
@@ -334,70 +333,82 @@ receita_por_cidade_produto
 
 # Resolução dos Exercícios ----------------------------------------------------
 
-# Exercício 01
 # Criando o vetor
 custos_semanais <- c(5400, 6100, 5900, NA, 6300, 6000)
 
 # Apresentando o vetor
 custos_semanais
 
-
-# Calculo a soma dos custos semanais
+#-------------------------------------------------------------------------------
+# Exercício 01
+# Calculo a soma dos custos totais
 total_semanal <- sum(custos_semanais, na.rm = TRUE)
+
 total_semanal
 
+#-------------------------------------------------------------------------------
+# Exercício 02
 # Calculo do custo médio
 custo_medio <- mean(custos_semanais, na.rm = TRUE)
+
 custo_medio
 
+#-------------------------------------------------------------------------------
+# Exercício 03
 # Calculo Menor e Maior valor dos custos
 custo_min <- min(custos_semanais, na.rm = TRUE)
 custo_max <- max(custos_semanais, na.rm = TRUE)
+
 custo_min
 custo_max
 
-total_semanal             
-custo_medio
-custo_min
-custo_max
-
-# Exercício 02
+#-------------------------------------------------------------------------------
+# Exercício 04
 # Filtrando apenas vendas do Produto A
-dados_vendas_limpos |> 
+vendas_produto_a <- dados_vendas_limpos |> 
   filter(produto == "Produto A")
-#  group_by(produto)|>
-#  summarise(receita_total = sum(receita, na.rm = TRUE))|>
-#  arrange(desc(receita_total))
+vendas_produto_a
 
+#-------------------------------------------------------------------------------
+#Exercício 05
 # Filtrando apenas vendas realizadas em Piumhi com mais de 10 unidades
-dados_vendas_limpos|>
+vendas_piumhi <- dados_vendas_limpos|>
   filter(cidade == "Piumhi" & unidades > 10)
-  
+
+vendas_piumhi
+
+#-------------------------------------------------------------------------------
 #Exercício 06
 # Calcula o total de unidades por produto
-dados_vendas_limpos |>
+total_unidade_vendidas_produto <- dados_vendas_limpos |>
   group_by(produto)|>
   summarise(sum(unidades))
 
+total_unidade_vendidas_produto
+
+#-------------------------------------------------------------------------------
 # Exercicio 07
 # Calcular a receita media por cidade
-dados_vendas_limpos |>
+receita_media_por_cidade <- dados_vendas_limpos |>
   group_by (cidade)|>
   summarise(mean(receita))
 
+receita_media_por_cidade
+
+#-------------------------------------------------------------------------------
 # Exercicio 08
 # Calcular a total por representante
-dados_vendas_limpos |>
+receita_total_por_representante <- dados_vendas_limpos |>
   group_by((representante)) |>
   summarise(sum(receita))
 
+receita_total_por_representante
+
+#-------------------------------------------------------------------------------
 # Exercício 09
 # Calcular o menor preço unitário por produto
-dados_vendas_limpos |>
+menor_preco_unitario <- dados_vendas_limpos |>
   group_by(produto) |>
   summarise(min(preco_unitario))
-            
-# Exercício 10 
-resultado <- dados_vendas_limpos |>
-  select(cidade, produto)
-resultado
+
+menor_preco_unitario
