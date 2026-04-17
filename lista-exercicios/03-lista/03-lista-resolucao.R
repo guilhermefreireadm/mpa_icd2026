@@ -192,8 +192,6 @@ dados_estudo_eventos <- dados_acoes |>
     dados_eventos_corporativos,   
     by = c("ticker", "data" = "data_anuncio") 
     ) |> 
-#-------------------------------------------------------------------------------
-
 # c. Seleciona as variáveis
     select(ticker,data, tipo_evento, valor, retorno_diario, volume)
 
