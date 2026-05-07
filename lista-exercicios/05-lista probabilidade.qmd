@@ -1,0 +1,107 @@
+---
+lang: pt-BR
+format:
+  pdf:
+    pdf-engine: xelatex
+    include-in-header:
+      - file: pre_textuais.tex
+      - text: |
+          \usepackage{indentfirst}
+          \usepackage{microtype}
+          % ==========================
+          % DADOS EDITÁVEIS DO EXAME
+          % Edite apenas o texto entre chaves.
+          % Não altere os nomes dos comandos.
+          % Exemplo: troque "Nome Completo do Discente"
+          % pelo nome real do discente.
+          %
+          % Se não houver subtítulo ou coorientador(a),
+          % deixe o campo vazio entre chaves.
+          %
+          % Evite usar os caracteres %, &, # e _
+          % nesses campos editáveis.
+          % ==========================
+          \newcommand{\InstituicaoExameQualificacao}{Instituto Federal de Educação, Ciência e Tecnologia de Minas Gerais}
+          \newcommand{\CampusExameQualificacao}{Campus Formiga}
+          \newcommand{\ProgramaExameQualificacao}{Mestrado Profissional em Administração}
+          \newcommand{\NomeAutorExameQualificacao}{Guilherme Freire de Oliveira}
+          \newcommand{\TituloExameQualificacao}{Produto Técnico e Tecnológico - PTT}
+          \newcommand{\SubtituloExameQualificacao}{}
+          \newcommand{\CidadeExameQualificacao}{Formiga}
+          \newcommand{\EstadoExameQualificacao}{MG}
+          \newcommand{\AnoExameQualificacao}{2026}
+          \newcommand{\OrientadorExameQualificacao}{Prof. Dr. Lelis Pedro de Andrade}
+          \newcommand{\CoorientadorExameQualificacao}{}
+          \newcommand{\LinhaPesquisaExameQualificacao}{Finanças Corporativas e Investimentos}
+          \newcommand{\PalavrasChaveExameQualificacao}{Matemática financeira, Análise de Investimento, Finanças empresariais, PMEs, Aplicativo financeiro.}
+          \newcommand{\TextoApresentacaoExameQualificacao}{Projeto de pesquisa apresentado ao Programa de Pós-Graduação em Administração do Instituto Federal de Educação, Ciência e Tecnologia de Minas Gerais (IFMG) -- Campus Formiga, como requisito para o trabalho final da disciplina de Nivelamento de Matemática Financeira.}
+    documentclass: report
+    papersize: a4
+    geometry:
+      - top = 3cm
+      - bottom = 2cm
+      - left = 3cm
+      - right = 2cm
+    fontsize: 12pt
+    linestretch: 1.25
+    indent: true
+    toc: false
+    number-sections: true
+    fig-dpi: 300
+    fig-cap-location: bottom
+    tbl-cap-location: top
+    link-citations: true
+execute:
+  echo: false
+  warning: false
+  message: false
+crossref:
+  fig-prefix: "Fig."
+  tbl-prefix: "Tab."
+bibliography: referencias.bib
+csl: associacao-brasileira-de-normas-tecnicas-ipea.csl
+editor: source
+---
+
+## Exercício 01
+### 01
+S = {n, f, h}
+
+n = não é adquirida;
+f = adquirida de forma amigável
+h = adquirida de forma hostil
+
+### 02
+
+$$
+A = F \cup H
+$$
+
+$$
+F \cap H = \varnothing
+$$
+
+### 03
+$$
+F \cap H = \varnothing
+$$
+Porque são eventos totalmente impossíveis da acontecer de forma simultânea, ou seja se um ocorre automaticamente impossibilita totalmente do outro acontecer.
+
+## Exercício 02
+Probabilidade de queda = 18%
+A: Ação X cai mais de 2% no dia
+B: Ação Y cai mais de 2% no dia
+
+### 01
+
+
+### 02
+$$
+P(A \cup B) = P(A) + P(B) - P(A \cap B)
+$$
+$$
+P(A \cup B) = 0.10 + 0.08 - 0.04
+$$
+$$
+P(A \cup B) = 0,14
+$$
