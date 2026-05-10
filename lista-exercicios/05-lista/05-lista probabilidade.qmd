@@ -1,0 +1,417 @@
+---
+lang: pt-BR
+format:
+  pdf:
+    pdf-engine: xelatex
+    Author: Guilherme Freire
+    Disciplina: Introdução a Ciência de Dados
+    Professor:  Prof. Dr. Washington Santos da Silva
+    documentclass: report
+    papersize: a4
+    geometry:
+      - top = 3cm
+      - bottom = 2cm
+      - left = 3cm
+      - right = 2cm
+    fontsize: 12pt
+    linestretch: 1.25
+    indent: true
+    toc: false
+    number-sections: false
+    fig-dpi: 300
+    fig-cap-location: bottom
+    tbl-cap-location: top
+    link-citations: true
+execute:
+  echo: true
+  warning: false
+  message: false
+crossref:
+  fig-prefix: "Fig."
+  tbl-prefix: "Tab."
+editor: source
+---
+
+## Exercício 01
+
+### Exercício 1.1
+
+S = {n, f, h}
+
+n = não é adquirida;
+
+f = adquirida de forma amigável
+
+h = adquirida de forma hostil
+
+### Exercício 1.2
+
+$$
+A = F \cup H
+$$
+
+$$
+F \cap H = \varnothing
+$$
+
+### Exercício 1.3
+
+$$
+F \cap H = \varnothing
+$$
+Porque são eventos totalmente impossíveis da acontecer de forma simultânea, ou seja se um ocorre automaticamente impossibilita totalmente do outro acontecer.
+
+## Exercício 02
+
+Probabilidade de queda = 18%
+
+A: Ação X cai mais de 2% no dia
+
+B: Ação Y cai mais de 2% no dia
+
+### Exercício 2.1
+$$
+P(\overline{A}) = 1 - P(A)
+$$
+
+$$
+P(\overline{A}) = 1 - 0.10
+$$
+
+$$
+P(\overline{A}) = 0,90
+$$
+
+A probabilidade da carteira apresentar retorno negativo é de 90%
+
+### Exercício 2.2
+
+$$
+P(A \cup B) = P(A) + P(B) - P(A \cap B)
+$$
+
+$$
+P(A \cup B) = 0.10 + 0.08 - 0.04
+$$
+
+$$
+P(A \cup B) = 0,14
+$$
+
+A chance de A chace de pelo menos uma das duas ações cair mais de 3% é de 14%.
+
+## Exercício 03
+
+### Exercício 3.1
+
+```{r}
+p <- 0.5 ^ 10
+
+probabilidade <- p * 100
+
+probabilidade
+```
+A probabilidade é de 0,09765% do gestor superar o benchmark por 10 anos consecutivos.
+
+### Exercíco 3.2
+
+universo = 2000 gestores
+```{r}
+p <- 0.5 ^ 10
+
+gestores <- 2000
+
+esperado <- gestores * p
+
+esperado
+```
+Para um universo de 2000 gestores espera-se que 1,95 gestores superariam o benchmark por 10 anos consecutivos.
+
+### Exercício 3.3
+
+Que pode existir desempenhos superiores mas não por eficiência, competência ou capacitação, mas sim por questões probabilisticas.
+
+### Exercício 3.4
+
+Não. Porque como ambos possui a probabilidade maior que zero e são independentes. Portanto se temos: 
+
+$$ 
+P(C \cap D) = P(C)P(D) 
+$$ 
+com P(C) > 0 e P(D) > 0 então matemáticamente 
+
+$$ 
+P(C \cap D) > 0 
+$$ 
+
+logo um não exclui o acontecimento de outro ele se tornaria excludente se 
+
+$$ 
+P(C \cap D) = 0 
+$$
+
+## Exercício 04
+
+Atraso = 15% 
+
+Inadimplente = 9% 
+
+Atrasados e Inadimplentes = 6% 
+
+P(Inadimplente | Atraso) 
+
+I = Inadimplente 
+
+A = Atraso 
+
+I = 0.09 
+
+A = 0.15 
+
+$$ 
+P(I\cap A) = 0.06 
+$$ 
+$$ 
+P(I|A) = \frac {P(I \cap A)} {P (A)}
+$$
+```{r}
+p = 0.06 / 0.15
+p
+```
+
+$$ 
+P(I|A) = 0.4 
+$$ 
+
+$$ 
+P(I|A) = 40\% 
+$$ 
+
+Logo se temos que dos clientes que atrasam 40% ficaram inadimplentes. Probabilidade condicional
+
+```{r}
+fator_aumento_risco = 0.4 / 0.09
+fator_aumento_risco
+```
+
+Após ocorrer o atraso, temos um crescimento de 4,4444 vezes para se tornarem inadimplentes.
+
+## Exercício 05
+
+I = Taxa total de inadimplência
+
+B = Perfil do cliente de baixo risco
+
+M = Perfil do cliente de médio risco
+
+A = Perfil do cliente de alto risco
+
+P(B) = 50% = 0.5
+
+P(M) = 35% = 0.35
+
+P(A) = 15% = 0.15
+
+P(I|B) = 3% 0.03
+
+P(I|M) = 8% = 0.08
+
+P(I|A) = 22% = 0.22
+
+P(I) = ?
+
+$$
+P(I) = P(I|B) * P(B) + P(I|B) * P(B) + P(I|M) * P(M) + P(I|A) * P(A)
+$$
+```{r}
+taxa_total_inadimplecia = 0.5 * 0.03 + 0.35 * 0.08 + 0.15 * 0.22
+taxa_total_inadimplecia = taxa_total_inadimplecia * 100
+taxa_total_inadimplecia
+```
+
+Logo temos que a taxa total de inadimplência desta carteira é de:
+
+$$
+P(I) = 7,6\%
+$$
+
+## Exercício 06
+
+$$
+R = \text {empresas com risco elevado}
+$$
+
+$$
+D = \text {empresas que entram em dificuldade financeira}
+$$
+
+$$
+\overline {D} = \text {empresas saudáveis}
+$$
+
+$$
+P(D) = 8\% = 0.08
+$$
+
+$$
+P(\overline {D}) = 1 - P(D)
+$$
+
+$$
+P(\overline {D}) = 1 - 0.08
+$$
+
+$$
+P(\overline {D}) = 0.92
+$$
+
+$$
+P(R|D) = 85\% = 0.85
+$$
+
+$$
+P(R|\overline {D}) = 25\% = 0.25
+$$
+
+$$
+P(D \cap R) = P(R|D)*P(D)
+$$
+
+```{r}
+#  empresas dificuldade financeira classificada como risco elevado
+empresa_alto_risco <- 0.85 * 0.08
+empresa_alto_risco
+
+```
+
+$$
+P(R\cap D) = 0.068
+$$
+
+$$
+P(\overline {D} \cap R) = P(R|\overline {D}) * P(\overline{D})
+$$
+```{r}
+# empresas saudáveis classificada coma risco elevado
+saudaveis_alto_risco <- 0.25 * 0.92
+saudaveis_alto_risco
+```
+
+$$
+P(R) = 0.068 + 0.23
+$$
+
+```{r}
+probabilidade_total <- 0.068 + 0.23
+probabilidade_total
+```
+
+$$
+P(R) = 0,298
+$$
+
+$$
+P(R) = 29,8\%
+$$
+
+Logo, a probabilidade total da empresa ser classificada como risco elevado é de:
+$$
+P(R) = 29,8\%
+$$
+
+$$
+P(D|R) = \frac {0.068} {0.298}
+$$
+
+```{r}
+dificuldade_risco_elevado <- 0.068 / 0.298
+dificuldade_risco_elevado
+```
+
+$$
+P(D|R) = 22,81\%
+$$
+
+## Exercício 07
+```{r}
+library(tidyverse)
+
+set.seed(2026)
+# números de simulações a serem feitas
+quantidade_simulações <- c(1000, 10000, 100000)
+
+simulacao_moeda <- function(n) {
+  lancamentos <- sample(
+    c("cara", "coroa"),
+    size = n,
+    replace = TRUE,
+    prob = c(0.5,0.5)
+  )
+
+p_cara <- mean(lancamentos == "cara")
+
+tibble(
+  simulacao = n,
+  frequencia_cara = p_cara,
+  p_coroa = 0.5
+  )
+}
+resultado <- map_dfr (quantidade_simulações, simulacao_moeda)
+resultado
+```
+Com essa simulação podemos observar que quanto maior o número de lançamentos da moeda mais se aproxima de 0.5, ou seja, da probabilidade de 50% para cada lançamento. Evidenciando a lei dos grandes números.
+
+## Exercício 08
+Com esse código
+```{r}
+library(tidyverse)
+
+set.seed(2026)
+
+# números de empresas
+n_empresas <- 100000
+
+# primeiro simulamos quantidade de empresas 
+# que entram em dificuldade financeira 
+
+simulacao_empresas <- tibble(
+  dificuldade_financeira = sample(
+    c(TRUE, FALSE),
+    size = n_empresas,
+    replace = TRUE,
+    prob = c(0.08, 0.92)
+  ),
+
+  # case_when() aplica uma regra para cada condição lógica
+  alto_risco = case_when(
+   dificuldade_financeira ~ sample(
+      c(TRUE, FALSE),
+      size = n_empresas,
+      replace = TRUE,
+      prob = c(0.85, 0.15)
+    ),
+# !dificuldade_financeira seriam as empresas saudáveis
+    !dificuldade_financeira ~ sample(
+      c(TRUE, FALSE),
+      size = n_empresas,
+      replace = TRUE,
+      prob = c(0.25, 0.75)
+    )
+  )
+)
+
+# summarise() resume as principais proporções simuladas
+simulacao_empresas |>
+  summarise(
+     # empresas que entram em dificuldade financeira
+    prop_dificuldade_financeira = mean(dificuldade_financeira),
+    # empresas classificadas como alto risco
+    prop_alto_risco = mean(alto_risco), 
+    # empresas classificadas em dificuldade financeira 
+    #dentre as classificadas como alto risco
+    prop_dificuldade_financeira_alto_risco =
+      mean(dificuldade_financeira[alto_risco]) 
+  )
+```
+
+De acordo com os resultados apresentados no Exercício 08, os valores ficaram muito próximos aos encontrados no Exercício 06, demonstrando que a simulação convergiu para os resultados anteriormente calculados.

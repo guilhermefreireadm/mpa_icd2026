@@ -1,0 +1,64 @@
+---
+lang: pt-BR
+format:
+  pdf:
+    pdf-engine: xelatex
+    Author: Guilherme Freire
+    Disciplina: Introdução a Ciência de Dados
+    Professor:  Prof. Dr. Washington Santos da Silva
+    documentclass: report
+    papersize: a4
+    geometry:
+      - top = 3cm
+      - bottom = 2cm
+      - left = 3cm
+      - right = 2cm
+    fontsize: 12pt
+    linestretch: 1.25
+    indent: true
+    toc: false
+    number-sections: false
+    fig-dpi: 300
+    fig-cap-location: bottom
+    tbl-cap-location: top
+    link-citations: true
+execute:
+  echo: true
+  warning: false
+  message: false
+crossref:
+  fig-prefix: "Fig."
+  tbl-prefix: "Tab."
+editor: source
+
+library: tidyverse
+---
+
+## 01
+R(E) = c(6, 2, -1, -4)
+P(X) = c(0.15, 0.45, 0.25, 0.15)
+S = 10000
+
+```{r}
+library(tidyverse)
+library(dplyr)
+set.seed(20153)
+retornos_possiveis <- c(0.06, 0.02, -0.01, -0.04)
+probabilidades <- c(0.15, 0.45, 0.25, 0.15)
+
+retornos <- sample(
+  retornos_possiveis, 
+  size = 10000, 
+  replace = TRUE, 
+  prob = probabilidades)
+
+mean(retornos)
+var(retornos)
+sd(retornos)
+mean(retornos < 0)
+```
+
+
+
+
+
